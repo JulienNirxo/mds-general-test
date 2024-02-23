@@ -5,7 +5,7 @@ jest.mock('../src/main');
 
 describe('main function', () => {
   it('should return "world" if param is "hello"', () => {
-    (main as jest.Mock).mockReturnValue('world');
+    jest.mocked(main).mockReturnValue('world');
 
     const result = main('hello');
     expect(result).toBe('world');
